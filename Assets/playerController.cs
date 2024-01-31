@@ -12,7 +12,7 @@ public class playerController : MonoBehaviour
     private bool playerMove;
     public float jumpForce;
 
-    public Rigidbody rb;
+    Rigidbody rb;
     public  Camera cam;
     // Start is called before the first frame update
     void Start()

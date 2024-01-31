@@ -10,6 +10,7 @@ public class playerController : MonoBehaviour
 
     float xRotation = 0;
     private bool playerMove;
+    public float jumpForce;
 
     Rigidbody rb;
     public  Camera cam;
@@ -39,5 +40,8 @@ public class playerController : MonoBehaviour
 
         Vector3 move = (xInput * transform.right) + (zInput * transform.forward); // setting direction
         rb.velocity = new Vector3(move.x * (playerSpeed * Time.deltaTime), rb.velocity.y, move.z * (playerSpeed * Time.deltaTime));
+
+        // jump mechanic
+        if (Input.GetKey(KeyCode.Space)) rb.AddForce(Vector2.up * jumpForce);
     }
 }

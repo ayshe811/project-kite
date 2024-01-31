@@ -14,6 +14,9 @@ public class playerController : MonoBehaviour
 
     Rigidbody rb;
     public  Camera cam;
+
+    [SerializeField] private bool isMoving;
+    Animator anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +40,8 @@ public class playerController : MonoBehaviour
         // player movement
         xInput = Input.GetAxisRaw("Horizontal");
         zInput = Input.GetAxisRaw("Vertical");
+
+        zInput = Mathf.Clamp(zInput, 0, 1000000);
 
         Vector3 move = (xInput * transform.right) + (zInput * transform.forward); // setting direction
         rb.velocity = new Vector3(move.x * (playerSpeed * Time.deltaTime), rb.velocity.y, move.z * (playerSpeed * Time.deltaTime));

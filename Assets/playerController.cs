@@ -24,10 +24,10 @@ public class playerController : MonoBehaviour
     {
         // player rotation
         mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * xSensitivity;
-        mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * ySensitivity;
+      //  mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * ySensitivity;
 
-        xRotation -= mouseY; // -= bcos i want the rotation along the x axis to correspond with my mouse position (up and down)
-        xRotation = Mathf.Clamp(xRotation, -80, 80);
+      //  xRotation -= mouseY; // -= bcos i want the rotation along the x axis to correspond with my mouse position (up and down)
+      //  xRotation = Mathf.Clamp(xRotation, -80, 80);
 
         cam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
         transform.Rotate(Vector3.up * (mouseX * Time.deltaTime) * xSensitivity);

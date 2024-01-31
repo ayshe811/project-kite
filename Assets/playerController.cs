@@ -12,11 +12,10 @@ public class playerController : MonoBehaviour
     private bool playerMove;
     public float jumpForce;
 
-    Rigidbody rb;
+    public Rigidbody rb;
     public  Camera cam;
 
     [SerializeField] private bool isMoving;
-    Animator anim;
     // Start is called before the first frame update
     void Start()
     {

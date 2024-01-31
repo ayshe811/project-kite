@@ -39,12 +39,16 @@ public class playerController : MonoBehaviour
     private void animations()
     {
         // move
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             anim.SetBool("move", true);
             isMoving = true;
         }
-        else anim.SetBool("move", false);
+        else
+        {
+            anim.SetBool("move", false);
+            isMoving = false;
+        }
     }
     private void rotation()
     {
